@@ -15,4 +15,19 @@ const randomIndex = Math.round(Math.random() * 2)
 const choices = ['R', 'P', 'S']
 
 const computerChoice = choices[randomIndex]
+
 console.log(`Computer chose ${computerChoice}.`)
+if (computerChoice === choice) {
+  console.log(`Tie!`)
+  ties++
+} else if (
+  (computerChoice === 'R' && choice === 'S') ||
+  (computerChoice === 'P' && choice === 'R') ||
+  (computerChoice === 'S' && choice === 'P')
+) {
+  console.log(`You lose!`)
+  losses++
+} else {
+  console.log(`You win!`)
+  wins++
+}
